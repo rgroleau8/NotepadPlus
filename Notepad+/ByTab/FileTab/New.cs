@@ -9,7 +9,7 @@ namespace NotepadPlus
         /// <summary>
         /// Clears the Notepad area and resests TitleText and LoadedFile
         /// </summary>
-        public void FileTab_New_EraseNotePad()
+        public void New()
         {
 
             GetNotePadArea.Clear();

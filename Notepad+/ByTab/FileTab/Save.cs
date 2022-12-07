@@ -9,7 +9,7 @@ namespace NotepadPlus
         /// <summary>
         /// Checks if the loadedFilePath is exists, if not does a Save As
         /// </summary>
-        public void FileTab_Save_SaveFile()
+        public void Save()
         {
             //checks if the file has the default name template
             if (new FileInfo(LoadedFilePath).Exists == false)

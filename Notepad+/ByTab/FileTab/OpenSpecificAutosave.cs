@@ -6,7 +6,7 @@ namespace NotepadPlus
 
     public partial class Form1 : Form
     {
-        public void FileTab_OpenSpecific_Autosave()
+        public void OpenSpecificAutosave()
         {
             ValidationResponse getFile = FindNote.GetFile(AppConfigurationCalls.AutosaveDirectory);
 

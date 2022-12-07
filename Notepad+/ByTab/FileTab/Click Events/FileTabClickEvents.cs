@@ -14,38 +14,38 @@ namespace NotepadPlus
         //New
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FileTab_New_EraseNotePad();
+            New();
         }
 
         //Open
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FileTab_Open_GetNote();
+            Open();
 
         }
 
         //Save
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FileTab_Save_SaveFile();
+            Save();
         }
 
         //Save As
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FileTab_SaveAs_SaveFileAs();
+            SaveAs();
         }
 
         //Restore Last Autosave
         private void restoreLastAutosaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FileTab_OpenLastAutosave_Open();
+            OpenLastAutosave();
         }
 
         //Open Specific Autosave
         private void openSpecificAutosaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FileTab_OpenSpecific_Autosave();
+            OpenSpecificAutosave();
         }
     }
 }
