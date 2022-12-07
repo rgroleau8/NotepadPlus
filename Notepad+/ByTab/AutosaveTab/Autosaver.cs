@@ -7,9 +7,22 @@ namespace NotepadPlus.ByTab.AutosaveTab
 
         #region Variables
 
-        private System.Windows.Forms.Timer _timer;
+        /// <summary>
+        /// The most recently saved RichTextBox, set in an event handler for the Notepad area when text is changed.
+        /// </summary>
         private RichTextBox _currentRTB;
+
+        /// <summary>
+        /// Used as a temp variable to store the last saved autosave.  Used to check against the current one to see if a save is needed.
+        /// </summary>
         private RichTextBox _lastSavedRTB;
+
+        //Object path is written out fully to make sure it uses Forms and not Thread
+        private System.Windows.Forms.Timer _timer;
+
+        /// <summary>
+        /// All autosave files will start with autosave-
+        /// </summary>
         private const string _startFileNameWIth = "autosave-";
 
         #endregion
@@ -27,6 +40,7 @@ namespace NotepadPlus.ByTab.AutosaveTab
         #endregion
 
         #region Properties
+
 
         public RichTextBox GetCurrentRTB
         {
@@ -86,6 +100,8 @@ namespace NotepadPlus.ByTab.AutosaveTab
             if (GetCurrentRTB.Text == "")
                 return;
 
+            //GetCurrentRTB is set in an eventhandler when the NotepadArea text is changed.  
+            //If the CurrentRTB isnt equal to the last saved one, then it will autosave the new one.
             if (GetCurrentRTB.Text != GetLastSavedRTB.Text)
             {
                 if (Directory.Exists(AppConfigurationCalls.AutosaveDirectory) == false)
@@ -94,8 +110,10 @@ namespace NotepadPlus.ByTab.AutosaveTab
                     MessageBox.Show("Output Directory doesnt exist");
                 }
 
+                //Stores the current saved RTB into GetLastSavedRTB for the next timer tick check to be checked against the current.
                 GetLastSavedRTB.Text = GetCurrentRTB.Text;
 
+                //ex. autosave-12-07-2022 192534.txt
                 string filePath = AppConfigurationCalls.AutosaveDirectory + StartFileNameWith + DateTime.Now.ToString("MM-dd-yyyy HHmmss") + ".txt";
                 GetCurrentRTB.SaveFile(filePath, RichTextBoxStreamType.PlainText);
 
