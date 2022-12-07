@@ -9,7 +9,7 @@ namespace NotepadPlus
     public partial class Form1 : Form
     {
 
-        public void FileTab_OpenLastAutosave_Open()
+        public void OpenLastAutosave()
         {
             DirectoryInfo autoSaveDir = new DirectoryInfo(AppConfigurationCalls.AutosaveDirectory);
 

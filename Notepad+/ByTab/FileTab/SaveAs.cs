@@ -9,7 +9,7 @@ namespace NotepadPlus
         /// <summary>
         /// Prompts user to search for a valid file and saves the contents of the Notepad Area to it
         /// </summary>
-        public void FileTab_SaveAs_SaveFileAs()
+        public void SaveAs()
         {
             ValidationResponse getFile = FindNote.GetFile();
 

@@ -14,7 +14,7 @@ namespace NotepadPlus
       /// <summary>
       /// Prompts the user to search for a file and loads the file into the Notepad Area
       /// </summary>
-        public void FileTab_Open_GetNote()
+        public void Open()
         {
             ValidationResponse getFile = FindNote.GetFile();
 
