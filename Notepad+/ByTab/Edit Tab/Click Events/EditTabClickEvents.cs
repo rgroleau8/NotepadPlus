@@ -13,13 +13,13 @@ namespace NotepadPlus
         //undo
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditTab_UndoRedo_Undo();
+            Undo();
         }
 
         //redo
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditTab_UndoRedo_Redo();
+            Redo();
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace NotepadPlus
         /// </summary>
         private void notePadArea_KeyDown(object sender, KeyEventArgs e)
         {
-            EditTab_UndoRedo_StoreData(e);
+            StoreData(e);
         }
     }
 }

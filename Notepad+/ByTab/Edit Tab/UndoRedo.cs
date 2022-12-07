@@ -14,13 +14,13 @@ namespace NotepadPlus
         /// A hack to bypass the normal undo redo operation of the Richtextbox, will save the text prior to one of the below keys.
         /// Undo and redo will work on everyword typed, not just the 1 word back or forward
         /// </summary>
-        private void EditTab_UndoRedo_StoreData(KeyEventArgs e)
+        private void StoreData(KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Tab)
             {
                 this.SuspendLayout();        
-                EditTab_UndoRedo_Undo();
-                EditTab_UndoRedo_Redo();
+                Undo();
+                Redo();
                 this.ResumeLayout();
             }
         }
@@ -29,7 +29,7 @@ namespace NotepadPlus
         /// <summary>
         /// Performs an undo operation on the Notepad area using the RichTextBox feature Undo
         /// </summary>
-        private void EditTab_UndoRedo_Undo()
+        private void Undo()
         {
             GetNotePadArea.Undo();
         }
@@ -37,7 +37,7 @@ namespace NotepadPlus
         /// <summary>
         /// Performs an redo operation on the Notepad area using the RichTextBox feature Redo
         /// </summary>
-        private void EditTab_UndoRedo_Redo()
+        private void Redo()
         {
             GetNotePadArea.Redo();
         }
