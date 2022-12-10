@@ -226,7 +226,7 @@
             this.timerIntervalinMillisecToolStripMenuItem.Name = "timerIntervalinMillisecToolStripMenuItem";
             this.timerIntervalinMillisecToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.timerIntervalinMillisecToolStripMenuItem.Text = "Timer Interval (in millisec)";
-            this.timerIntervalinMillisecToolStripMenuItem.Click += new System.EventHandler(this.timerIntervalinMillisecToolStripMenuItem_Click);
+            
             // 
             // ConfigureTimerIntervalTextbox
             // 
