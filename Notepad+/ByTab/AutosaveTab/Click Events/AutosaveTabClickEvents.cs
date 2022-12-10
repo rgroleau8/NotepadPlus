@@ -7,10 +7,13 @@ namespace NotepadPlus
 
     public partial class Form1 : Form
     {
+
+        #region Configure
+
         //Configure
         private void changeSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         //Enabled or disabled combo box
@@ -56,16 +59,7 @@ namespace NotepadPlus
 
         }
 
-        private void openSaveLocationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Process.Start("explorer.exe", AppConfigurationCalls.AutosaveDirectory);
-        }
-
-        //Clear cache
-        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ClearCache.DeleteAllFiles(AppConfigurationCalls.AutosaveDirectory);
-        }
+        #region OutputDirectory
 
         //Search For Directory
         private void SetAutosaveDir_Click_1(object sender, EventArgs e)
@@ -80,5 +74,40 @@ namespace NotepadPlus
                 }
             }
         }
+
+
+        #endregion
+
+        #endregion
+
+
+        #region OpenSaveLocation
+
+        private void openSaveLocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (new DirectoryInfo(AppConfigurationCalls.AutosaveDirectory).Exists == false)
+            {
+                MessageBox.Show("Please set an autosave directory under Configure > Output Directory > Search For Folder");
+                return;
+            }
+
+
+            Process.Start("explorer.exe", AppConfigurationCalls.AutosaveDirectory);
+        }
+
+        #endregion
+
+
+        #region Clear Cache
+
+        //Clear cache
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClearCache.DeleteAllFiles(AppConfigurationCalls.AutosaveDirectory);
+        }
+
+        #endregion
+
     }
 }
