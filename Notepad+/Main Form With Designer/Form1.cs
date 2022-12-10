@@ -98,8 +98,6 @@ namespace NotepadPlus
 
         }
 
-
-
         #endregion
 
         #region Events
@@ -112,19 +110,7 @@ namespace NotepadPlus
 
         #endregion
 
-
-
-
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timerIntervalinMillisecToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         
     }
