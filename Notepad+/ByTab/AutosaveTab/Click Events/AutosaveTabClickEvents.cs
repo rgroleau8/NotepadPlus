@@ -62,7 +62,7 @@ namespace NotepadPlus
         }
 
         //Search For Directory
-        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        private void SetAutosaveDir_Click_1(object sender, EventArgs e)
         {
             using (var folderDB = new FolderBrowserDialog())
             {

@@ -35,6 +35,7 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreLastAutosaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openSpecificAutosaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,13 +51,12 @@
             this.ConfigureTimerIntervalTextbox = new System.Windows.Forms.ToolStripTextBox();
             this.outputDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConfigureOutputDirTxtBox = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SetAutoSaveDir = new System.Windows.Forms.ToolStripMenuItem();
             this.ConfigureSaveChanges = new System.Windows.Forms.ToolStripMenuItem();
             this.openSaveLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearCacheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notePadArea = new System.Windows.Forms.RichTextBox();
-            this.openSpecificAutosaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +121,13 @@
             this.restoreLastAutosaveToolStripMenuItem.Text = "Restore Last Autosave";
             this.restoreLastAutosaveToolStripMenuItem.Click += new System.EventHandler(this.restoreLastAutosaveToolStripMenuItem_Click);
             // 
+            // openSpecificAutosaveToolStripMenuItem
+            // 
+            this.openSpecificAutosaveToolStripMenuItem.Name = "openSpecificAutosaveToolStripMenuItem";
+            this.openSpecificAutosaveToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.openSpecificAutosaveToolStripMenuItem.Text = "Open Specific Autosave";
+            this.openSpecificAutosaveToolStripMenuItem.Click += new System.EventHandler(this.openSpecificAutosaveToolStripMenuItem_Click);
+            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -133,14 +140,14 @@
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.redoToolStripMenuItem.Text = "Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
@@ -159,7 +166,7 @@
             this.changeSettingsToolStripMenuItem1,
             this.restoreSettingsToolStripMenuItem});
             this.changeFontToolStripMenuItem.Name = "changeFontToolStripMenuItem";
-            this.changeFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changeFontToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.changeFontToolStripMenuItem.Text = "Change Font";
             // 
             // changeSettingsToolStripMenuItem1
@@ -179,7 +186,7 @@
             // saveSettingsToolStripMenuItem
             // 
             this.saveSettingsToolStripMenuItem.Name = "saveSettingsToolStripMenuItem";
-            this.saveSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveSettingsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.saveSettingsToolStripMenuItem.Text = "Save Settings";
             this.saveSettingsToolStripMenuItem.Click += new System.EventHandler(this.saveSettingsToolStripMenuItem_Click);
             // 
@@ -230,7 +237,7 @@
             // 
             this.outputDirectoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ConfigureOutputDirTxtBox,
-            this.toolStripMenuItem1});
+            this.SetAutoSaveDir});
             this.outputDirectoryToolStripMenuItem.Name = "outputDirectoryToolStripMenuItem";
             this.outputDirectoryToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.outputDirectoryToolStripMenuItem.Text = "Output Directory";
@@ -240,12 +247,12 @@
             this.ConfigureOutputDirTxtBox.Name = "ConfigureOutputDirTxtBox";
             this.ConfigureOutputDirTxtBox.Size = new System.Drawing.Size(100, 23);
             // 
-            // toolStripMenuItem1
+            // SetAutoSaveDir
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
-            this.toolStripMenuItem1.Text = "Search For Folder";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
+            this.SetAutoSaveDir.Name = "SetAutoSaveDir";
+            this.SetAutoSaveDir.Size = new System.Drawing.Size(180, 22);
+            this.SetAutoSaveDir.Text = "Search For Folder";
+            this.SetAutoSaveDir.Click += new System.EventHandler(this.SetAutosaveDir_Click_1);
             // 
             // ConfigureSaveChanges
             // 
@@ -290,13 +297,6 @@
             this.notePadArea.TextChanged += new System.EventHandler(this.notePadArea_TextChanged);
             this.notePadArea.KeyDown += new System.Windows.Forms.KeyEventHandler(this.notePadArea_KeyDown);
             // 
-            // openSpecificAutosaveToolStripMenuItem
-            // 
-            this.openSpecificAutosaveToolStripMenuItem.Name = "openSpecificAutosaveToolStripMenuItem";
-            this.openSpecificAutosaveToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.openSpecificAutosaveToolStripMenuItem.Text = "Open Specific Autosave";
-            this.openSpecificAutosaveToolStripMenuItem.Click += new System.EventHandler(this.openSpecificAutosaveToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -336,7 +336,7 @@
         private ToolStripMenuItem outputDirectoryToolStripMenuItem;
         private ToolStripTextBox ConfigureOutputDirTxtBox;
         private ToolStripMenuItem ConfigureSaveChanges;
-        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem SetAutoSaveDir;
         private ToolStripMenuItem openSaveLocationToolStripMenuItem;
         private ToolStripMenuItem clearCacheToolStripMenuItem;
         private ToolStripMenuItem clearToolStripMenuItem;
