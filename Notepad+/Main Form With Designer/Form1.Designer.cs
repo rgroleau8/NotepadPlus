@@ -210,7 +210,7 @@
             this.changeSettingsToolStripMenuItem.Name = "changeSettingsToolStripMenuItem";
             this.changeSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.changeSettingsToolStripMenuItem.Text = "Configure";
-            this.changeSettingsToolStripMenuItem.Click += new System.EventHandler(this.changeSettingsToolStripMenuItem_Click);
+            
             // 
             // ConfigureEnabledMenu
             // 

@@ -10,12 +10,6 @@ namespace NotepadPlus
 
         #region Configure
 
-        //Configure
-        private void changeSettingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //Enabled or disabled combo box
         private void ConfigureEnabledMenu_Click(object sender, EventArgs e)
         {
