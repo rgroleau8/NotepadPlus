@@ -10,12 +10,6 @@ namespace NotepadPlus
 
         #region Configure
 
-        //Enabled or disabled combo box
-        private void ConfigureEnabledMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ConfigureSaveChanges_Click(object sender, EventArgs e)
         {
             if (ConfigureEnabledMenu.SelectedText == "Enabled")

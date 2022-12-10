@@ -217,7 +217,7 @@
             this.ConfigureEnabledMenu.Name = "ConfigureEnabledMenu";
             this.ConfigureEnabledMenu.Size = new System.Drawing.Size(180, 23);
             this.ConfigureEnabledMenu.Text = "Enabled";
-            this.ConfigureEnabledMenu.Click += new System.EventHandler(this.ConfigureEnabledMenu_Click);
+            
             // 
             // timerIntervalinMillisecToolStripMenuItem
             // 
